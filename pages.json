@@ -3,14 +3,45 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "首页",
+				"enablePullDownRefresh": true,
+				"navigationBarBackgroundColor":"#007AFF",
+				"navigationBarTextStyle":"white"
+			}
+		},
+		{
+		    "path" : "pages/user/user",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "用户",
+		        "enablePullDownRefresh": false,
+				"navigationBarBackgroundColor":"#007AFF",
+				"navigationBarTextStyle":"white"
+		    }
+		    
+		},
+		{
+			"path":"pages/videoPlay/videoPlay",
+			"style": {
+				"navigationBarTitleText":"播放"
 			}
 		}
-	],
+    ],
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarBackgroundColor":"#007AFF",
+		"navigationBarTextStyle":"white"
+	},
+	"tabBar":{
+		"list":[
+			{
+				"text":"首页",
+				"pagePath":"pages/index/index"
+			},
+			{
+				"text":"用户",
+				"pagePath":"pages/user/user"
+			}
+		]
 	}
 }

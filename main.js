@@ -2,6 +2,9 @@ import App from './App'
 
 // #ifndef VUE3
 import Vue from 'vue'
+
+import { axios } from "./util/defultUrl.js"
+Vue.prototype.$axios = axios
 Vue.config.productionTip = false
 App.mpType = 'app'
 const app = new Vue({
