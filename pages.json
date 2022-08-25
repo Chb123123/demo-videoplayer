@@ -1,6 +1,15 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+		    "path" : "pages/user/imgList/imgList",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "图片列表",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "首页",
@@ -21,6 +30,26 @@
 		    
 		},
 		{
+			"path":"pages/user/playMusic/playMusic",
+			"style":
+			{
+				"navigationBarTitleText": "播放音乐",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor":"#08070C",
+				"navigationBarTextStyle":"white"
+			}
+		},
+		{
+			"path":"pages/user/everyEarthy/everyEarthy",
+			"style":
+			{
+				"navigationBarTitleText": "土味情话",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor":"#87CEFF",
+				"navigationBarTextStyle":"white"
+			}
+		},
+		{
 			"path":"pages/videoPlay/videoPlay",
 			"style": {
 				"navigationBarTitleText":"播放"
@@ -32,6 +61,7 @@
 		"navigationBarBackgroundColor":"#007AFF",
 		"navigationBarTextStyle":"white"
 	},
+	// 导航栏模块
 	"tabBar":{
 		"backgroundColor":"#F5F5F5",
 		"list":[

@@ -16,7 +16,7 @@
 			</view>
 		</view>
 		<view class="NavList">
-			<view v-for="(item, index) in navBgList" :key="index" :style="'background-color:' + item.navBg" class="NvaStyle">{{ item.navTitle }}</view>
+			<view v-for="(item, index) in navBgList" :key="index" :style="'background-color:' + item.navBg" class="NvaStyle" @click="playMusic(item.event)">{{ item.navTitle }}</view>
 		</view>
 	</view>
 </template>
@@ -35,14 +35,14 @@
 				// 上传图片的地址
 				localImg: null,
 				navBgList: [
-					{ navTitle: '我的商城', navBg: "#FDB91A" },
-					{ navTitle: '我的微博', navBg: "#F48081" },
-					{ navTitle: '品牌简介', navBg: "#A0D350" },
-					{ navTitle: '微名片', navBg: "#A0D350" },
-					{ navTitle: '我的相册', navBg: "#86D5F6" },
-					{ navTitle: '新闻资讯', navBg: "#C99CD7" },
-					{ navTitle: '给我留言', navBg: "#3ACBC6" },
-					{ navTitle: '关注更多', navBg: '#BFBFBF' }
+					{ navTitle: '音乐播放', navBg: "#FDB91A", event: 'gotoPlayMusic'},
+					{ navTitle: '土味情话', navBg: "#F48081", event: 'gotoEarthy' },
+					{ navTitle: '品牌简介', navBg: "#A0D350", event: 'nullEvent' },
+					{ navTitle: '微名片', navBg: "#A0D350", event: 'nullEvent' },
+					{ navTitle: '我的相册', navBg: "#86D5F6", event: 'nullEvent' },
+					{ navTitle: '新闻资讯', navBg: "#C99CD7", event: 'nullEvent' },
+					{ navTitle: '给我留言', navBg: "#3ACBC6", event: 'nullEvent' },
+					{ navTitle: '关注更多', navBg: '#BFBFBF', event: 'nullEvent' }
 				]
 			}
 		},
@@ -86,6 +86,21 @@
 						console.log(res)
 					}
 				})
+			},
+			playMusic(event) {
+				if(event === 'gotoPlayMusic') {
+					wx.navigateTo({
+						url:"./playMusic/playMusic"
+					})
+				} if(event === 'gotoEarthy') {
+					wx.navigateTo({
+						url:"./everyEarthy/everyEarthy"
+					})
+				} else {
+					wx.showToast({
+						title: '暂无功能'
+					})
+				}
 			}
 		},
 		created() {
