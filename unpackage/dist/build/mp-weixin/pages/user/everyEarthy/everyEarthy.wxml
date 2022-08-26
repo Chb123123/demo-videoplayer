@@ -1,0 +1,1 @@
+<view class="EarthyContainer data-v-45534927"><view class="eartyhBox data-v-45534927">{{earthy}}</view><button data-event-opts="{{[['tap',[['taggerEarthy',['$event']]]]]}}" class="btn data-v-45534927" bindtap="__e">换 一 个</button></view>

@@ -1,0 +1,1 @@
+<view class="imgStyleContainer data-v-45c02b16"><block wx:if="{{timer}}"><image class="imgStyle data-v-45c02b16" src="http://elm.cangdu.org/img/164ad0b6a3917599.jpg" mode="aspectFit" data-event-opts="{{[['error',[['imageError',['$0'],['e']]]]]}}" binderror="__e"></image></block></view>

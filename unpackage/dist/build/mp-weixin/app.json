@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/user",
+    "pages/user/playMusic/playMusic",
+    "pages/user/everyEarthy/everyEarthy",
+    "pages/user/imgList/imgList",
+    "pages/videoPlay/videoPlay"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#007AFF",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "backgroundColor": "#F5F5F5",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "static/move.jpg",
+        "selectedIconPath": "static/move.jpg"
+      },
+      {
+        "text": "用户",
+        "pagePath": "pages/user/user",
+        "iconPath": "static/user1.jpg",
+        "selectedIconPath": "static/user1.jpg"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "首页",
+  "enablePullDownRefresh": true,
+  "navigationBarBackgroundColor": "#007AFF",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "video-box": "/components/videoBox",
+    "img-list": "/components/imgStyle"
+  }
+}

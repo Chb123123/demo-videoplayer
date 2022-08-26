@@ -1,0 +1,1 @@
+<view data-event-opts="{{[['tap',[['getVideoMp4',['$event']]]]]}}" class="videoContainer data-v-e14ce5e8" bindtap="__e"><image class="videoStyle data-v-e14ce5e8" src="{{videoImg}}" mode="aspectFit"></image><text class="videoTitle data-v-e14ce5e8">{{videoTitle}}</text></view>

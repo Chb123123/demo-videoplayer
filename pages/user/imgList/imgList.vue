@@ -11,9 +11,9 @@
 		</view>
 			<!-- 图片轮播 -->
 		<view class="imgBox">
-			<uni-swiper-dot :info="info" :current="current" field="content" :mode="mode">
-				<swiper class="swiper-box" @change="change">
-					<swiper-item v-for="(item ,index) in imgList" :key="index">
+			<uni-swiper-dot class="imgList" :info="imgList" :current="current" field="content" :mode="mode">
+				<swiper v-if="showSwiper" class="swiper-box" @change="change">
+					<swiper-item class="swiperStyle" v-for="(item ,index) in imgList" :key="index">
 						<view class="swiper-item">
 							<image :src="item"></image>
 							<view class="imgTitle">{{ imgTitle }}</view>
@@ -36,44 +36,47 @@
 				// 图片介绍
 				imgTitle: '',
 				current: 0,
-				mode: 'round',
+				mode: 'default',
 				value: 0,
-				      range: [
-				        { value: 0, text: "全部" },
-				        { value: 1, text: "女仆" },
-				        { value: 2, text: "JK制服" },
-				        { value: 3, text: "兔女郎" },
-				        { value: 4, text: "夏日泳装" },
-				        { value: 5, text: "动漫类" },
-				        { value: 6, text: "萝莉" },
-				        { value: 7, text: "少女" },
-				        { value: 8, text: "御姐" },
-				        { value: 9, text: "黑丝" },
-				        { value: 10, text: "白丝" },
-				        { value: 11, text: "肉丝" },
-				        { value: 12, text: "渔网" },
-				        { value: 13, text: "吊带娃" },
-				        { value: 14, text: "腿控" },
-				        { value: 15, text: "脚控" },
-				        { value: 16, text: "臀控" },
-				        { value: 17, text: "旗袍" },
-				      ],
+				showSwiper: true,
+				range: [
+				  { value: 0, text: "女仆" },
+				  { value: 1, text: "兔女郎" },
+				  { value: 2, text: "夏日泳装" },
+				  { value: 3, text: "动漫类" },
+				  { value: 4, text: "萝莉" },
+				  { value: 5, text: "少女" },
+				  { value: 6, text: "御姐" },
+				  { value: 7, text: "黑丝" },
+				  { value: 8, text: "白丝" },
+				  { value: 9, text: "肉丝" },
+				  { value: 10, text: "腿控" },
+				  { value: 11, text: "脚控" },
+				  { value: 12, text: "旗袍" }
+				],
 			}
+		},
+		onPullDownRefresh() {
+			this.downrenew()
 		},
 		methods: {
 			taggerImg() {
+				console.log(this.range[this.value].text)
+				this.showSwiper = false
 				wx.request({
 					method:"GET",
 					url: 'https://api.uomg.com/api/rand.img4',
 					data: {
-						sort: this.range[this.current].text,
+						sort: this.range[this.value].text,
 						format: 'json'
 					},
 					success:(res) => {
 						console.log(res)
 						if(res.data.code === 1) {
+							this.imgList = []
 							this.imgList = res.data.imgurl
 							this.imgTitle = res.data.title
+							this.showSwiper = true
 						} else {
 							wx.showToast({
 								title:'数据请求失败'
@@ -86,6 +89,7 @@
 				this.current = e.detail.current;
 			},
 			changeList(e) {
+				this.value = e
 			    this.taggerImg()
 			},
 		}
@@ -96,6 +100,8 @@
 	.imgListContainsr{
 		height: 100vh;
 		width: 750rpx;
+		display: flex;
+		flex-direction: column;
 		.downBox{
 			height: 100rpx;
 			// background-color: red;
@@ -110,11 +116,28 @@
 		/deep/.uni-select__selector-item{
 			font-size: 42rpx;
 		}
+		/deep/uni-swiper-dot{
+			flex: 1;
+		}
 		.imgBox{
-			height: 900rpx;
+			flex: 1;
+			// height: 900rpx;
+			display: flex;
+			flex-direction: column;
+			width: 750rpx;
+			// height: 900rpx;
+			.swiper-box{
+				height: 80vh;
+				.swiperStyle{
+					height: 100%;
+				}
+			}
 			.swiper-item{
+				// flex: 1;
 				position: relative;
-				height: 900rpx;
+				// height: 900rpx;
+				// width: 750rpx;
+				height: 100%;
 				> image {
 					height: 100%;
 					width: 100%;
@@ -133,8 +156,10 @@
 				}
 			}
 		}
-		/deep/swiper {
-			height: 900rpx;
+		.imgList {
+			// height: 900rpx;
+			flex: 1;
+			width: 750rpx;
 		}
 		.btn{
 			position: fixed;

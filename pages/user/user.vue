@@ -37,8 +37,8 @@
 				navBgList: [
 					{ navTitle: '音乐播放', navBg: "#FDB91A", event: 'gotoPlayMusic'},
 					{ navTitle: '土味情话', navBg: "#F48081", event: 'gotoEarthy' },
-					{ navTitle: '品牌简介', navBg: "#A0D350", event: 'nullEvent' },
-					{ navTitle: '微名片', navBg: "#A0D350", event: 'nullEvent' },
+					{ navTitle: '图片合集', navBg: "#A0D350", event: 'goImgList' },
+					{ navTitle: '动漫图片', navBg: "#A0D350", event: 'goCartoon' },
 					{ navTitle: '我的相册', navBg: "#86D5F6", event: 'nullEvent' },
 					{ navTitle: '新闻资讯', navBg: "#C99CD7", event: 'nullEvent' },
 					{ navTitle: '给我留言', navBg: "#3ACBC6", event: 'nullEvent' },
@@ -96,7 +96,16 @@
 					wx.navigateTo({
 						url:"./everyEarthy/everyEarthy"
 					})
-				} else {
+				} if(event === 'goImgList') {
+					wx.navigateTo({
+						url:'imgList/imgList'
+					})
+				} if(event === 'goCartoon') {
+					wx.navigateTo({
+						url: 'cartoonList/cartoonList'
+					})
+				}
+				else {
 					wx.showToast({
 						title: '暂无功能'
 					})

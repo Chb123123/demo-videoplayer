@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "用户",
+  "enablePullDownRefresh": false,
+  "navigationBarBackgroundColor": "#007AFF",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "uni-icons": "/uni_modules/uni-icons/components/uni-icons/uni-icons"
+  }
+}
