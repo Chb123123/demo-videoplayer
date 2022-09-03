@@ -1,17 +1,6 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-		    "path" : "pages/user/cartoonList/cartoonList",
-		    "style" :                                                                                    
-		    {
-		        "navigationBarTitleText": "动漫图片",
-		        "enablePullDownRefresh": true,
-				"navigationBarBackgroundColor":"#87CEFF",
-				"navigationBarTextStyle":"white"
-		    }
-		    
-		},
-		{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "首页",
@@ -57,6 +46,17 @@
 		    {
 		        "navigationBarTitleText": "图片列表",
 		        "enablePullDownRefresh": false,
+				"navigationBarBackgroundColor":"#87CEFF",
+				"navigationBarTextStyle":"white"
+		    }
+		    
+		},
+		{
+		    "path" : "pages/user/cartoonList/cartoonList",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "动漫图片",
+		        "enablePullDownRefresh": true,
 				"navigationBarBackgroundColor":"#87CEFF",
 				"navigationBarTextStyle":"white"
 		    }

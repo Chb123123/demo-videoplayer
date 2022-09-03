@@ -3,7 +3,7 @@
 		<uni-popup ref="popup" type="dialog">
 			<uni-popup-dialog message="下拉刷新" :duration="2000" :before-close="true" @close="close" @confirm="confirm">图片通过下拉的方式刷新</uni-popup-dialog>
 		</uni-popup>
-		<image :src="CartoonItem"></image>
+		<image class="imgStyle" :src="CartoonItem"></image>
 	</view>
 </template>
 
@@ -66,5 +66,9 @@
 	.CartoonContainer{
 		height: 100vh;
 		width: 750rpx;
+		.imgStyle{
+			width: 750rpx;
+			height: 100vh;
+		}
 	}
 </style>

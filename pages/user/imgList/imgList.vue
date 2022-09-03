@@ -56,9 +56,6 @@
 				],
 			}
 		},
-		onPullDownRefresh() {
-			this.downrenew()
-		},
 		methods: {
 			taggerImg() {
 				console.log(this.range[this.value].text)
@@ -92,6 +89,9 @@
 				this.value = e
 			    this.taggerImg()
 			},
+		},
+		created() {
+			this.taggerImg()
 		}
 	}
 </script>
